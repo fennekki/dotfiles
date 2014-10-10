@@ -1,25 +1,26 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/fennekki/.zshrc'
-
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
-setopt PROMPT_SUBST
-export TERMINAL="xterm"
-export PAGER="less"
-export EDITOR="vim"
-export PATH="$PATH"
+# A lot of this is lifted from holman
+# it's strictly speaking somewhat different, I guess?
+export ZSH=$HOME/.dotfiles/zsh
 
-autoload -U colors && colors
-PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m %{$fg_no_bold[green]%}%~ %{$reset_color%}%# '
-RPROMPT='[`cat /sys/class/power_supply/BAT1/status` `cat /sys/class/power_supply/BAT1/capacity`%%]'
+# Removes duplicates from $config_files
+typeset -U config_files
+config_files=($ZSH/*.zsh)
 
-alias ls="ls --color=auto"
-alias hibernate-lock="su -c '(sleep 5 && pm-hibernate)&' && i3lock"
+# Load plugins first
+ADOTDIR=$HOME/.antigen
+source $ZSH/antigen/antigen.zsh
+
+source $ZSH/plugins/plugins.zsh
+
+# Finalize plugins
+antigen apply
+
+for file in $config_files
+do
+    source $file
+done
+
+

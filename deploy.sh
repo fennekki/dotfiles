@@ -24,7 +24,7 @@ find -maxdepth 2 -name '*.symlink' -print |
     do (
         long_name=$(readlink -f "$dotfile")
         short_name="${dotfile##*/}"
-        link_location="$HOME/${short_name%.symlink}"
+        link_location="$HOME/.${short_name%.symlink}"
         echo "$long_name -> $link_location"
         ln -s "$long_name" "$link_location"
     ) done
