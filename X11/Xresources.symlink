@@ -5,7 +5,7 @@ XTerm*fastScroll: true
 XTerm*VT100.geometry: 80x32
 XTerm*bellIsUrgent: true
 XTerm*faceName: Inconsolata-g
-XTerm*faceSize: 12
+XTerm*faceSize: 11
 XTerm*termName: xterm-256color
 *foreground: rgb:ee/ee/ee
 *background: rgb:08/08/08
