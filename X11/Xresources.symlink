@@ -1,0 +1,11 @@
+XTerm*locale: true
+XTerm*metaSendsEscape: true
+XTerm*saveLines: 1024
+XTerm*fastScroll: true
+XTerm*VT100.geometry: 80x32
+XTerm*bellIsUrgent: true
+XTerm*faceName: Inconsolata-g
+XTerm*faceSize: 12
+XTerm*termName: xterm-256color
+*foreground: rgb:ee/ee/ee
+*background: rgb:08/08/08
