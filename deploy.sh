@@ -13,8 +13,14 @@ find -maxdepth 2 -type d -name '*.xdg_config' -print |
         long_name=$(readlink -f "$configdir")
         short_name="${configdir##*/}"
         link_location="$XDG_CONFIG_HOME/${short_name%.xdg_config}"
-        echo "$long_name -> $link_location"
-        ln -s "$long_name" "$link_location"
+
+        if [[ ! -a "$link_location" ]]
+        then
+            echo "$long_name -> $link_location"
+            ln -s "$long_name" "$link_location"
+        else
+            echo "$link_location exists, skipping"
+        fi
     ) done
 
 # $HOME dotfiles
@@ -25,6 +31,12 @@ find -maxdepth 2 -name '*.symlink' -print |
         long_name=$(readlink -f "$dotfile")
         short_name="${dotfile##*/}"
         link_location="$HOME/.${short_name%.symlink}"
-        echo "$long_name -> $link_location"
-        ln -s "$long_name" "$link_location"
+
+        if [[ ! -a "$link_location" ]]
+        then
+            echo "$long_name -> $link_location"
+            ln -s "$long_name" "$link_location"
+        else
+            echo "$link_location exists, skipping"
+        fi
     ) done
