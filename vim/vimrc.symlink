@@ -1,0 +1,62 @@
+syntax enable
+set autoindent
+
+set modelines=3
+set encoding=utf-8
+
+" On error (make) first check all tabs, then create new one
+set switchbuf=usetab,newtab
+
+" Wrap to textwidth, wrap comments, insert comment leader on LF,
+" insert comment leader on o, allow formatting with gq{motion}
+set formatoptions=tcroq
+set formatexpr=
+set formatprg=par\ 60
+
+" Allow backspacing
+set backspace=indent,eol,start
+
+"set comments=s1:/**,mb:\ *,ex:\ */,s1:/*,mb:*,ex:*/,:///,://,b:#,:%,:XCOMM,n:>,fb:-
+set dictionary+=/usr/share/dict/words
+
+" Tab settings:
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+" Comments
+" By default assume automagical comments
+
+autocmd FileType c,d,cpp setlocal comments=://
+autocmd FileType c,d,cpp setlocal comments^=:///
+autocmd FileType c,d,cpp setlocal comments^=s1:/**,mb:\ *,ex:\ */,s1:/*,mb:*,ex:*/
+autocmd FileType d setlocal comments^=s1:/++,mb:\ +,ex:\ +/,s1:/+,mb:+,ex:+/
+
+autocmd FileType coolbasic setlocal comments=:\',://
+autocmd FileType coolbasic setlocal sts=4 sw=4 et
+autocmd FileType coolbasic setlocal fileformat=dos
+
+autocmd FileType vim setlocal comments=:\"
+
+" Makefiles need tabs
+autocmd FileType make setlocal noet
+
+" Line numbers relative to current line
+" set relativenumber
+
+" leader command to , - pretty useless
+" let mapleader=","
+
+" No ignoring case in :s
+set noignorecase
+set nosmartcase
+
+set incsearch
+
+" STATIC MACRO LISTINGS
+" Include guards
+let @g='yypp0i#endif /* $a */Ok0i#define k0i#ifndef jj'
+
+" Autoloader
+augroup myvimrc
+au!
+au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
