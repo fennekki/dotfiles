@@ -3,9 +3,6 @@
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 echo "Config dir: $XDG_CONFIG_HOME"
 
-# Run config
-find -maxdepth 2 -name 'install.sh' -printf "Running %p:\n" -execdir /bin/sh '{}' '+'
-
 # XDG-confoming config directories
 find -maxdepth 2 -type d -name '*.xdg_config' -print |
     while read configdir
@@ -40,3 +37,6 @@ find -maxdepth 2 -name '*.symlink' -print |
             echo "$link_location exists, skipping"
         fi
     ) done
+
+# Run installers last - configs are copied first
+find -maxdepth 2 -name 'install.sh' -printf "Running %p:\n" -execdir /bin/sh '{}' '+'
