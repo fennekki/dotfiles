@@ -6,7 +6,7 @@ SAVEHIST=1000
 
 setopt PROMPT_SUBST
 
-export TERMINAL="xterm"
+export TERMINAL="urxvtc"
 export PAGER="less"
 export EDITOR="vim"
 export PATH="$PATH"

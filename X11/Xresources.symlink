@@ -7,5 +7,62 @@ XTerm*bellIsUrgent: true
 XTerm*faceName: Inconsolata-g
 XTerm*faceSize: 11
 XTerm*termName: xterm-256color
-*foreground: rgb:ee/ee/ee
-*background: rgb:08/08/08
+XTerm*background: rgb:00/00/00
+XTerm*foreground: rgb:ee/ee/ee
+
+URxvt*depth: 32
+URxvt.background: rgba:1111/1111/1111/dddd
+
+URxvt*geometry: 80x32
+URxvt*background: rgb:00/00/00
+URxvt*foreground: rgb:ee/ee/ee
+URxvt*skipScroll: true
+!URxvt*fading: 50
+!URxvt*fadeColor: rgb:08/08/08
+!URxvt*scrollColor: colour
+! The colour of the border around the text area and between the scrollbar and the text.
+!URxvt*borderColor: colour
+! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for
+URxvt*font: xft:Inconsolata\\-g:pixelsize=11,xft:Inconsolata\\-g for Powerline:pixelsize=11
+!URxvt*boldFont: fontlist
+!URxvt*italicFont: fontlist
+!URxvt*boldItalicFont: fontlist
+! When font styles are not enabled, or this option is enabled (True, option -is, the default), bold/blink font styles imply high intensity
+! URxvt*intensityStyles: boolean
+URxvt*urgentOnBell: true
+! Set scrollbar style to rxvt, plain, next or xterm. plain is the authors favourite.
+!URxvt*scrollstyle: plain
+! Set the scrollbar width in pixels.
+!URxvt*thickness: number
+! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
+URxvt*scrollBar: false
+!URxvt*scrollBar_right: true
+URxvt*scrollTtyOutput: true
+URxvt*scrollTtyKeypress: true
+URxvt*saveLines: 1024
+!URxvt*borderLess: boolean
+URxvt*skipBuiltinGlyphs: false
+! True: handle Meta (Alt) + keypress to set the 8th bit. False: handle Meta (Alt) + keypress as an escape prefix [default].
+URxvt*meta8: false
+! True: the mouse wheel scrolls a page full. False: the mouse wheel scrolls five lines [default].
+URxvt*mouseWheelScrollPage: false
+! True: store tabs as wide characters. False: interpret tabs as cursor movement only; option "-ptab".
+!URxvt*pastableTabs: boolean
+URxvt*cursorBlink: false
+URxvt*cursorUnderline: false
+! True: blank the pointer when a key is pressed or after a set number of seconds of inactivity. False: the pointer is always visible [default].
+URxvt*pointerBlank: false
+! Enables "insecure" mode. Rxvt-unicode offers some escape sequences that echo arbitrary strings like the icon name or the locale. This could
+URxvt*insecure: false
+
+! Specify the reply rxvt-unicode sends to the shell when an ENQ (control-E) character is passed through. It may contain escape values as
+URxvt*answerbackString: 
+! Specifies the program to be started with a URL argument. Used by the "selection-popup" and "matcher" perl extensions.
+URxvt*url-launcher: xdg-open
+URxvt*perl-ext: default,url-select
+URxvt*keysym.C-i: perl:url-select:select_next
+URxvt*url-select.launcher: xdg-open
+URxvt.url-select.underline: true
+! Turn on/off ISO 14755 (default enabled).
+URxvt*iso14755: false
+URxvt*iso14755_52: false
