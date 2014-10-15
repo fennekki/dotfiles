@@ -23,7 +23,7 @@ URxvt*skipScroll: true
 ! The colour of the border around the text area and between the scrollbar and the text.
 !URxvt*borderColor: colour
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for
-URxvt*font: xft:Inconsolata\\-g:pixelsize=11,xft:Inconsolata\\-g for Powerline:pixelsize=11
+URxvt*font: xft:Inconsolata\\-g:size=11,xft:Inconsolata\\-g for Powerline:size=11
 !URxvt*boldFont: fontlist
 !URxvt*italicFont: fontlist
 !URxvt*boldItalicFont: fontlist
