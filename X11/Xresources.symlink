@@ -4,14 +4,11 @@ XTerm*saveLines: 1024
 XTerm*fastScroll: true
 XTerm*VT100.geometry: 80x32
 XTerm*bellIsUrgent: true
-XTerm*faceName: Inconsolata-g
+XTerm*faceName: Inconsolata-g for Powerline
 XTerm*faceSize: 11
 XTerm*termName: xterm-256color
 XTerm*background: rgb:00/00/00
 XTerm*foreground: rgb:ee/ee/ee
-
-URxvt*depth: 32
-URxvt.background: rgba:1111/1111/1111/dddd
 
 URxvt*geometry: 80x32
 URxvt*background: rgb:00/00/00
@@ -23,7 +20,7 @@ URxvt*skipScroll: true
 ! The colour of the border around the text area and between the scrollbar and the text.
 !URxvt*borderColor: colour
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for
-URxvt*font: xft:Inconsolata\\-g:size=11,xft:Inconsolata\\-g for Powerline:size=11
+URxvt*font: xft:Inconsolata-g:size=11,xft:Inconsolata-g for Powerline:size=11
 !URxvt*boldFont: fontlist
 !URxvt*italicFont: fontlist
 !URxvt*boldItalicFont: fontlist
