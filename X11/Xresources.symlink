@@ -10,8 +10,12 @@ XTerm*termName: xterm-256color
 XTerm*background: rgb:00/00/00
 XTerm*foreground: rgb:ee/ee/ee
 
+!Xft*rgba: none
+
+URxvt*depth: 32
+
 URxvt*geometry: 80x32
-URxvt*background: rgb:00/00/00
+URxvt*background: rgba:0000/0000/0000/cccc
 URxvt*foreground: rgb:ee/ee/ee
 URxvt*skipScroll: true
 !URxvt*fading: 50
