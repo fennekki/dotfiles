@@ -1,11 +1,13 @@
-#0000000 i3status configuration file.
-# see "man i3status" for documentation.
+#!/bin/sh
+WIRELESS_NAME="$(ip link|awk '{match($2, /(wl)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
+WIRED_NAME="$(ip link|awk '{match($2, /(en)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
+BATTERY_NUM="$(ls /sys/class/power_supply/|grep BAT|head -1|sed 's/BAT\([0-9]*\)/\1/')"
 
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
+WIRELESS_NAME=${WIRELESS_NAME:-"wlp3s0"}
+WIRED_NAME=${WIRED_NAME:-"enp1s0"}
+BATTERY_NUM=${BATTERY_NUM:-"0"}
 
+echo '
 general {
         colors = true
         interval = 5
@@ -14,26 +16,26 @@ general {
 order += "ipv6"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
-order += "wireless wlp3s0"
-order += "ethernet enp2s0f0"
+order += "wireless '$WIRELESS_NAME'"
+order += "ethernet '$WIRED_NAME'"
 #order += "disk /"
-order += "battery 1"
+order += "battery '$BATTERY_NUM'"
 order += "load"
 order += "volume master"
 order += "tztime local"
 
-wireless wlp3s0 {
+wireless '$WIRELESS_NAME' {
         format_up = "W: (%quality at %essid) %ip"
         format_down = "W: down"
 }
 
-ethernet enp2s0f0 {
+ethernet '$WIRED_NAME' {
         # if you use %speed, i3status requires root privileges
-        format_up = "E: PENIS %ip (%speed)"
+        format_up = "E: %ip (%speed)"
         format_down = "E: down"
 }
 
-battery 1 {
+battery '$BATTERY_NUM' {
         format = "%status %percentage %remaining"
 }
 
@@ -62,4 +64,4 @@ volume master {
     device = "default"
     mixer = "Master"
     mixer_idx = 0
-}
+}'
