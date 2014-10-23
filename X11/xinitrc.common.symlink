@@ -1,6 +1,8 @@
 setxkbmap -layout 'fi' -variant nodeadkeys -option compose:rwin
 xrdb -load $HOME/.Xresources
-LANG=C compton -cb --blur-background --blur-kern=11x11gaussian --blur-background-fixed
+if [ "$DISABLE_COMPTON" != "true" ]
+    then LANG=C compton -cb --blur-background --blur-kern=11x11gaussian --blur-background-fixed
+fi
 xautolock -time 10 -locker 'i3lock -e' -secure&
 dunst &
 urxvtd -f -o # urxvt daemon, using client as term
