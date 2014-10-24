@@ -1,5 +1,8 @@
 #!/bin/sh
 
+git submodule sync
+git submodule update --init --recursive
+
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 echo "Config dir: $XDG_CONFIG_HOME"
 
