@@ -95,6 +95,10 @@ bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86MonBrightnessUp exec "xbacklight +5"
 bindsym XF86MonBrightnessDown exec "xbacklight -5"
 
+# Suspend and friends
+bindsym XF86Suspend exec "i3-sensible-terminal -e su -c pm-hibernate"
+bindsym XF86Sleep exec "i3-sensible-terminal -e su -c pm-suspend"
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
