@@ -20,7 +20,7 @@ URxvt*geometry: 80x32
 
 ! GNOME-ESQUE THEME
 
-URxvt*background: #2B2B2B
+URxvt*background: #0B0B0B
 URxvt*foreground: #DEDEDE
 
 URxvt*colorUL: #86a2be
@@ -29,26 +29,26 @@ URxvt*colorUL: #86a2be
 URxvt*color0: #2E3436
 URxvt*color8: #555753
 ! red
-URxvt*color1: #CC0000
-URxvt*color9: #EF2929
+URxvt*color1: #E60000
+URxvt*color9: #F74141
 ! green
-URxvt*color2: #4E9A06
-URxvt*color10: #8AE234
+URxvt*color2: #76C22E
+URxvt*color10: #B2EA5C
 ! yellow
 URxvt*color3: #C4A000
 URxvt*color11: #FCE94F
 ! blue
-URxvt*color4: #3465A4
-URxvt*color12: #729FCF
+URxvt*color4: #5C8DD2
+URxvt*color12: #9ACFE7
 ! magenta
-URxvt*color5: #75507B
-URxvt*color13: #AD7FA8
+URxvt*color5: #9D78A3
+URxvt*color13: #CDA0CB
 ! cyan
-URxvt*color6: #06989A
-URxvt*color14: #34E2E2
+URxvt*color6: #2EC8CA
+URxvt*color14: #5CF1F1
 ! white
-URxvt*color7: #D3D7CF
-URxvt*color15: #EEEEEC
+URxvt*color7: #E9EBE7
+URxvt*color15: #FFFFFD
 
 ! ENDS
 
