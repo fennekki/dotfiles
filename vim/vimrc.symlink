@@ -16,8 +16,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-vinegar'
-" Plugin 'sjl/gundo.vim' " Wrong python or sth
-" Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
