@@ -3,17 +3,18 @@ compinit
 
 # A lot of this is lifted from holman
 # it's strictly speaking somewhat different, I guess?
-export ZSH=$HOME/.dotfiles/zsh
+export ZSH_FILES=$HOME/.dotfiles/zsh
+export SH_FILES=$HOME/.dotfiles/sh
 
 # Removes duplicates from $config_files
 typeset -U config_files
-config_files=($ZSH/*.zsh)
+config_files=($ZSH_FILES/*.zsh)
 
 # Load plugins first
 ADOTDIR=$HOME/.antigen
-source $ZSH/antigen/antigen.zsh
+source $ZSH_FILES/antigen/antigen.zsh
 
-source $ZSH/plugins/plugins.zsh
+source $ZSH_FILES/plugins/plugins.zsh
 
 # Finalize plugins
 antigen apply
@@ -23,4 +24,5 @@ do
     source $file
 done
 
-
+# Source environment
+source $SH_FILES/environment.sh
