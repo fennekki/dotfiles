@@ -1,6 +1,6 @@
 #!/bin/sh
 WIRELESS_NAME="$(ip link|awk '{match($2, /(wl)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
-WIRED_NAME="$(ip link|awk '{match($2, /(en)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
+WIRED_NAME="$(ip link|awk '{match($2, /(en|eth)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
 BATTERY_NUM="$(ls /sys/class/power_supply/|grep BAT|head -1|sed 's/BAT\([0-9]*\)/\1/')"
 
 WIRELESS_NAME=${WIRELESS_NAME:-"DISABLED"}

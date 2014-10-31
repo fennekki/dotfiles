@@ -1,5 +1,5 @@
 export TERMINAL="urxvtc"
 export PAGER="less"
 export EDITOR="vim"
-export PATH="$PATH"
+export PATH="$HOME/bin:$PATH"
 export SHELL="zsh"

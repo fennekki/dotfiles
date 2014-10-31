@@ -11,3 +11,7 @@ echo "Installing..."
 # Run the install script and once finished, quit
 vim -c 'VundleInstall' -c 'qa'
 
+# For YCM
+cd $HOME/.vim/bundle/YouCompleteMe &&\
+echo $PWD &&\
+sh ./install.sh --clang-completer --omnisharp-completer
