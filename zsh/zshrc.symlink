@@ -3,8 +3,8 @@ compinit
 
 # A lot of this is lifted from holman
 # it's strictly speaking somewhat different, I guess?
-export ZSH_FILES=$HOME/.dotfiles/zsh
-export SH_FILES=$HOME/.dotfiles/sh
+ZSH_FILES=$HOME/.dotfiles/zsh
+SH_FILES=$HOME/.dotfiles/sh
 
 # Removes duplicates from $config_files
 typeset -U config_files
