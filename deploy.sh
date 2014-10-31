@@ -1,7 +1,8 @@
 #!/bin/sh
 
+git submodule init
 git submodule sync
-git submodule update --init --recursive
+git submodule update --recursive
 
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 echo "Config dir: $XDG_CONFIG_HOME"
@@ -14,7 +15,7 @@ find -maxdepth 2 -type d -name '*.xdg_config' -print |
         short_name="${configdir##*/}"
         link_location="$XDG_CONFIG_HOME/${short_name%.xdg_config}"
 
-        if [[ ! -a "$link_location" ]]
+        if [ ! -e "$link_location" ]
         then
             echo "$long_name -> $link_location"
             ln -s "$long_name" "$link_location"
@@ -32,7 +33,7 @@ find -maxdepth 2 -name '*.symlink' -print |
         short_name="${dotfile##*/}"
         link_location="$HOME/.${short_name%.symlink}"
 
-        if [[ ! -a "$link_location" ]]
+        if [ ! -e "$link_location" ]
         then
             echo "$long_name -> $link_location"
             ln -s "$long_name" "$link_location"
