@@ -19,7 +19,7 @@ then
     sh ./install.sh --clang-completer --omnisharp-completer
 fi
 
-if [ ! -e "$HOME/.vim/ycm_extra_conf.py" ]
-then
+# if [ ! -e "$HOME/.vim/ycm_extra_conf.py" ]
+# then
     cp ycm_extra_conf.py $HOME/.vim/ycm_extra_conf.py
-fi
+# fi
