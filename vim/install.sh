@@ -11,6 +11,11 @@ echo "Installing..."
 # Run the install script and once finished, quit
 vim -c 'VundleInstall' -c 'qa'
 
+# if [ ! -e "$HOME/.vim/ycm_extra_conf.py" ]
+# then
+    cp ycm_extra_conf.py $HOME/.vim/ycm_extra_conf.py
+# fi
+
 # For YCM
 if [ ! -e $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]
 then
@@ -18,8 +23,3 @@ then
     echo $PWD
     sh ./install.sh --clang-completer --omnisharp-completer
 fi
-
-# if [ ! -e "$HOME/.vim/ycm_extra_conf.py" ]
-# then
-    cp ycm_extra_conf.py $HOME/.vim/ycm_extra_conf.py
-# fi
