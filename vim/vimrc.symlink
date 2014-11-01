@@ -2,9 +2,9 @@ set nocompatible
 filetype off
 
 " Windows plays by its own rules
-if has("win32")
+if has('win32')
     set rtp+=~/vimfiles/bundle/Vundle.vim
-    let path='~/vimfiles/bundle'
+    let path=expand('~/vimfiles/bundle')
     call vundle#begin(path)
 else
     set rtp+=~/.vim/bundle/Vundle.vim
@@ -18,6 +18,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'szw/vim-tags'
 
 call vundle#end()
 
@@ -32,11 +33,11 @@ let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open=1
 
 let g:syntastic_python_python_exec='/usr/bin/env python'
-let g:syntastic_python_checkers=["python"]
+let g:syntastic_python_checkers=['python']
 
-let g:syntastic_c_checkers=["gcc", "make"]
+let g:syntastic_c_checkers=['gcc', 'make']
 
-let g:syntastic_xml_chekers=["xmllint"]
+let g:syntastic_xml_chekers=['xmllint']
 
 " Airline
 if !exists('g:airline_symbols')
@@ -54,7 +55,16 @@ let g:airline_symbols.paste='Þ'
 let g:airline_symbols.whitespace='Ξ'
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf=expand('~/.vim/ycm_extra_conf.py')
+
+" vim-tags
+let g:vim_tags_auto_generate=1
+let g:vim_tags_ignore_fies=['.gitignore', '.svnignore', '.cvsignore']
+let g:vim_tags_ignore_file_comment_pattern='^[#"]'
+let g:vim_tags_directories=[".git", ".hg", ".svn", ".bzr", "_darcs", "CVS"]
+let g:vim_tags_main_file='tags'
+let g:vim_tags_extension='.tags'
+let g:vim_tags_cache_dir=expand('~/.vim')
 
 syntax enable
 set autoindent
