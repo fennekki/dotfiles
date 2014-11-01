@@ -19,6 +19,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'szw/vim-tags'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
@@ -65,6 +67,12 @@ let g:vim_tags_directories=[".git", ".hg", ".svn", ".bzr", "_darcs", "CVS"]
 let g:vim_tags_main_file='tags'
 let g:vim_tags_extension='.tags'
 let g:vim_tags_cache_dir=expand('~/.vim')
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger='<f10>'
+let g:UltiSnipsListSnippets='<c-f10>'
+let g:UltiSnipsJumpForwardTrigger='<f10>'
+let g:UltiSnipsJumpBackwardTrigger='<s-f10>'
 
 syntax enable
 set autoindent
