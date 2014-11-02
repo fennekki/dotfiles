@@ -21,5 +21,5 @@ if [ ! -e $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]
 then
     cd "$HOME/.vim/bundle/YouCompleteMe" &&\
     echo $PWD
-    sh ./install.sh --clang-completer --omnisharp-completer
+    sh ./install.sh --clang-completer --system-libclang --omnisharp-completer
 fi
