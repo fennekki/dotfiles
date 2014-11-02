@@ -1,82 +1,13 @@
-XTerm*locale: true
-XTerm*metaSendsEscape: true
-XTerm*saveLines: 1024
-XTerm*fastScroll: true
-XTerm*VT100.geometry: 80x32
-XTerm*bellIsUrgent: true
-XTerm*faceName: Inconsolata-g for Powerline
-XTerm*faceSize: 11
-XTerm*termName: xterm-256color
-XTerm*background: rgb:00/00/00
-XTerm*foreground: rgb:ee/ee/ee
-
-!Xft*rgba: none
-
 URxvt*depth: 32
-
 URxvt*geometry: 80x32
-!URxvt*background: rgba:0000/0000/0000/cccc
-!URxvt*foreground: rgb:ee/ee/ee
-
-! GNOME-ESQUE THEME
-
-URxvt*background: #0B0B0B
-URxvt*foreground: #DEDEDE
-
-URxvt*colorUL: #86a2be
-
-! black
-URxvt*color0: #2E3436
-URxvt*color8: #555753
-! red
-URxvt*color1: #E60000
-URxvt*color9: #F74141
-! green
-URxvt*color2: #76C22E
-URxvt*color10: #B2EA5C
-! yellow
-URxvt*color3: #C4A000
-URxvt*color11: #FCE94F
-! blue
-URxvt*color4: #5C8DD2
-URxvt*color12: #9ACFE7
-! magenta
-URxvt*color5: #9D78A3
-URxvt*color13: #CDA0CB
-! cyan
-URxvt*color6: #2EC8CA
-URxvt*color14: #5CF1F1
-! white
-URxvt*color7: #E9EBE7
-URxvt*color15: #FFFFFD
-
-! ENDS
 
 URxvt*skipScroll: true
-!URxvt*fading: 50
-!URxvt*fadeColor: rgb:08/08/08
-!URxvt*scrollColor: colour
-! The colour of the border around the text area and between the scrollbar and the text.
-!URxvt*borderColor: colour
-! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for
 URxvt*font: xft:Inconsolata-g:size=11,xft:Inconsolata-g for Powerline:size=11
-!URxvt*boldFont: fontlist
-!URxvt*italicFont: fontlist
-!URxvt*boldItalicFont: fontlist
-! When font styles are not enabled, or this option is enabled (True, option -is, the default), bold/blink font styles imply high intensity
-! URxvt*intensityStyles: boolean
 URxvt*urgentOnBell: true
-! Set scrollbar style to rxvt, plain, next or xterm. plain is the authors favourite.
-!URxvt*scrollstyle: plain
-! Set the scrollbar width in pixels.
-!URxvt*thickness: number
-! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
 URxvt*scrollBar: false
-!URxvt*scrollBar_right: true
 URxvt*scrollTtyOutput: true
 URxvt*scrollTtyKeypress: true
 URxvt*saveLines: 1024
-!URxvt*borderLess: boolean
 URxvt*skipBuiltinGlyphs: false
 ! True: handle Meta (Alt) + keypress to set the 8th bit. False: handle Meta (Alt) + keypress as an escape prefix [default].
 URxvt*meta8: false
@@ -102,3 +33,68 @@ URxvt.url-select.underline: true
 ! Turn on/off ISO 14755 (default enabled).
 URxvt*iso14755: false
 URxvt*iso14755_52: false
+
+! Solarized color scheme for the X Window System
+!
+! http://ethanschoonover.com/solarized
+
+
+! Common
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+
+! Dark
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+
+! Light
+
+! #define S_base03        #fdf6e3
+! #define S_base02        #eee8d5
+! #define S_base01        #93a1a1
+! #define S_base00        #839496
+! #define S_base0         #657b83
+! #define S_base1         #586e75
+! #define S_base2         #073642
+! #define S_base3         #002b36
+
+*background:              S_base03
+*foreground:              S_base0
+*fading:                  40
+*fadeColor:               S_base03
+*cursorColor:             S_base1
+*pointerColorBackground:  S_base01
+*pointerColorForeground:  S_base1
+
+*color0:                  S_base02
+*color1:                  S_red
+*color2:                  S_green
+*color3:                  S_yellow
+*color4:                  S_blue
+*color5:                  S_magenta
+*color6:                  S_cyan
+*color7:                  S_base2
+*color8:                  S_base03
+*color9:                  S_orange
+*color10:                 S_base01
+*color11:                 S_base00
+*color12:                 S_base0
+*color13:                 S_violet
+*color14:                 S_base1
+*color15:                 S_base3
