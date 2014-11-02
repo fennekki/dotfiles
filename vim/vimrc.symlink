@@ -74,8 +74,8 @@ let g:UltiSnipsListSnippets='<c-f10>'
 let g:UltiSnipsJumpForwardTrigger='<f10>'
 let g:UltiSnipsJumpBackwardTrigger='<s-f10>'
 
+" Plugins loaded, enable syntax
 syntax enable
-set autoindent
 
 set modelines=3
 set encoding=utf-8
@@ -87,44 +87,45 @@ set switchbuf=usetab,newtab
 " Wrap to textwidth, wrap comments, insert comment leader on LF,
 " insert comment leader on o, allow formatting with gq{motion}
 set formatoptions=tcroq
-set formatexpr=
-set formatprg=par\ 60
 
 " Allow backspacing
 set backspace=indent,eol,start
 
-"set comments=s1:/**,mb:\ *,ex:\ */,s1:/*,mb:*,ex:*/,:///,://,b:#,:%,:XCOMM,n:>,fb:-
-set dictionary+=/usr/share/dict/words
-
-" Tab settings:
+" 4-wide space tabs
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
-" Comments
-" By default assume automagical comments
-
+" C family comment settings
 autocmd FileType c,d,cpp setlocal comments=://
 autocmd FileType c,d,cpp setlocal comments^=:///
 autocmd FileType c,d,cpp setlocal comments^=s1:/**,mb:\ *,ex:\ */,s1:/*,mb:*,ex:*/
 autocmd FileType d setlocal comments^=s1:/++,mb:\ +,ex:\ +/,s1:/+,mb:+,ex:+/
 
+" CoolBasic needs all these, always
 autocmd FileType coolbasic setlocal comments=:\',://
 autocmd FileType coolbasic setlocal sts=4 sw=4 et
 autocmd FileType coolbasic setlocal fileformat=dos
 
+" Vimscript comments
 autocmd FileType vim setlocal comments=:\"
 
 " Makefiles need tabs
 autocmd FileType make setlocal noet
 
-" No ignoring case in :s
-set noignorecase
-set nosmartcase
+" Smarter searching 
+set ignorecase
+set smartcase
 
+" Incremental searches w/ hilight
 set incsearch
+set hlsearch
+
+" Automatic indentation
+set autoindent
 
 " STATIC MACRO LISTINGS
 " Include guards
-let @g='yypp0i#endif /* $a */Ok0i#define k0i#ifndef jj'
+" let @g='yypp0i#endif /* $a */Ok0i#define k0i#ifndef jj'
+" Replaced by the "once" snippet
 
 " Autoloader
 augroup myvimrc
