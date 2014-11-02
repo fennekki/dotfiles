@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
 
+" Just in case
+let mapleader=','
+
 " Windows plays by its own rules
 if has('win32')
     set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -22,6 +25,7 @@ Plugin 'szw/vim-tags'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vimoutliner/vimoutliner'
+Plugin 'mikewest/vimroom'
 Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
@@ -76,6 +80,11 @@ let g:UltiSnipsListSnippets='<c-f10>'
 let g:UltiSnipsJumpForwardTrigger='<f10>'
 let g:UltiSnipsJumpBackwardTrigger='<s-f10>'
 
+" vimroom
+let g:vimroom_ctermbackground=8 " For Solarized
+let g:vimroom_navigational_keys=0
+let g:vimroom_width=120
+
 " Solarized
 set background=dark
 colorscheme solarized
@@ -85,7 +94,10 @@ syntax enable
 
 set modelines=3
 set encoding=utf-8
+
+" For plugin compatibility
 set laststatus=2
+set shortmess+=c
 
 " On error (make) first check all tabs, then create new one
 set switchbuf=usetab,newtab
