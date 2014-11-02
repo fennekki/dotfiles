@@ -11,10 +11,8 @@ echo "Installing..."
 # Run the install script and once finished, quit
 vim -c 'VundleInstall' -c 'qa'
 
-# if [ ! -e "$HOME/.vim/ycm_extra_conf.py" ]
-# then
-    cp ycm_extra_conf.py $HOME/.vim/ycm_extra_conf.py
-# fi
+cp ycm_extra_conf.py $HOME/.vim/ycm_extra_conf.py
+cp vimoutlinerrc $HOME/.vim/vimoutlinerrc
 
 # For YCM
 if [ ! -e $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]
