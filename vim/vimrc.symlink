@@ -108,6 +108,10 @@ set encoding=utf-8
 set laststatus=2
 set shortmess+=c
 
+" Backups
+set nobackup
+set backupdir=~/tmp " Just in case though
+
 " On error (make) first check all tabs, then create new one
 set switchbuf=usetab,newtab
 
@@ -193,7 +197,7 @@ function! MD2VO()
   call setline(1, lines)
 endfunction
 
-function Markdown_Prepare_Wordcount()
+function! Markdown_Prepare_Wordcount()
     let lines = []
     for line in getline(1, '$')
         call add(lines, substitute(line, '^#\(#*\) ', '', ''))
