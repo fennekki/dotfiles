@@ -99,6 +99,11 @@ bindsym XF86MonBrightnessDown exec "xbacklight -5"
 bindsym XF86Suspend exec "i3-sensible-terminal -e su -c pm-hibernate"
 bindsym XF86Sleep exec "i3-sensible-terminal -e su -c pm-suspend"
 
+bindsym --release Print exec "~/.dotfiles/scripts/maimer.sh"
+bindsym --release Shift+Print exec "~/.dotfiles/scripts/maimer.sh select"
+bindsym --release $mod+Print exec "~/.dotfiles/scripts/maimer.sh imgur"
+bindsym --release $mod+Shift+Print exec "~/.dotfiles/scripts/maimer.sh imgur select"
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
