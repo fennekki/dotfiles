@@ -136,6 +136,9 @@ autocmd FileType c,d,cpp setlocal comments^=:///
 autocmd FileType c,d,cpp setlocal comments^=s1:/**,mb:\ *,ex:\ */,s1:/*,mb:*,ex:*/
 autocmd FileType d setlocal comments^=s1:/++,mb:\ +,ex:\ +/,s1:/+,mb:+,ex:+/
 
+" Coolbasic
+autocmd BufNewFile,BufRead *.cb setfiletype coolbasic
+autocmd BufNewFile,BufRead *.CB setfiletype coolbasic
 " CoolBasic needs all these, always
 autocmd FileType coolbasic setlocal comments=:\',://
 autocmd FileType coolbasic setlocal sts=4 sw=4 et
