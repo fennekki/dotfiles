@@ -111,7 +111,7 @@ set shortmess+=c
 
 " Backups
 set nobackup
-set backupdir=~/tmp " Just in case though
+" set backupdir=~/tmp,C:\\Temp,/tmp " Just in case though
 
 " On error (make) first check all tabs, then create new one
 set switchbuf=usetab,newtab
@@ -127,7 +127,8 @@ set ssop=blank,folds,help,localoptions,sesdir,tabpages,winsize
 set backspace=indent,eol,start
 
 " 4-wide space tabs
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" Replaced by vim-sleuth, I hope
 
 " C family comment settings
 autocmd FileType c,d,cpp setlocal comments=://
