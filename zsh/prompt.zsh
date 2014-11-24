@@ -1,6 +1,6 @@
 autoload -U colors && colors
 
-PROMPT='%{$fg_no_bold[green]%}%~ %{$fg_bold[blue]%}%#%{%b%} '
+PROMPT='%{$fg_no_bold[green]%}%2~ %{$fg_bold[blue]%}%#%{%b%} '
 
 # RPROMPT should be set by plugins
 

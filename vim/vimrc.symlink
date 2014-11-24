@@ -109,6 +109,9 @@ set encoding=utf-8
 set laststatus=2
 set shortmess+=c
 
+" Window autoresize
+set equalalways eadirection=both
+
 " Backups
 set nobackup
 " set backupdir=~/tmp,C:\\Temp,/tmp " Just in case though
