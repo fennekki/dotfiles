@@ -1,0 +1,4 @@
+URxvt*font: xft:Proggy SquareTT for Powerline:size=12:antialias=false
+! For proper Proggying
+URxvt*boldFont:
+URxvt*intensityStyles: true

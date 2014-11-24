@@ -21,3 +21,6 @@ then
     echo $PWD
     sh ./install.sh --clang-completer --system-libclang --omnisharp-completer
 fi
+
+# Update plugins if they've changed
+vim -c 'VundleUpdate' -c 'qa'

@@ -7,6 +7,10 @@ fi
 
 xrdb -load $HOME/.Xresources
 
+if [ "$PIXEL_FONTS" = "true" ]
+    then xrdb -override $HOME/.Xresources_pixel
+fi
+
 if [ "$DISABLE_COMPTON" != "true" ]
     then LANG=C compton -cb --blur-background --blur-kern=11x11gaussian --blur-background-fixed
 fi
