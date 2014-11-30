@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
 
+" Start by removing autocommands
+autocmd!
+
 " Just in case
 let mapleader=','
 
