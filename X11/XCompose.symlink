@@ -1,0 +1,43 @@
+include "%L"
+
+# Umlauts using diaeresis
+<Multi_key> <diaeresis> <a> : "ä" U00E4
+<Multi_key> <diaeresis> <Ä> : "Ä" U00C4
+<Multi_key> <diaeresis> <e> : "ë" U00EB
+<Multi_key> <diaeresis> <E> : "Ë" U00CB
+<Multi_key> <diaeresis> <h> : "ḧ" U1E27
+<Multi_key> <diaeresis> <H> : "Ḧ" U1E26
+<Multi_key> <diaeresis> <o> : "ö" U00F6
+<Multi_key> <diaeresis> <O> : "Ö" U00D6
+<Multi_key> <diaeresis> <u> : "ü" U00FC
+<Multi_key> <diaeresis> <U> : "Ü" U00DC
+<Multi_key> <diaeresis> <i> : "ï" U00EF
+<Multi_key> <diaeresis> <I> : "Ï" U00CF
+<Multi_key> <diaeresis> <y> : "ÿ" U00FF
+<Multi_key> <diaeresis> <Y> : "Ÿ" U0178
+
+# Mathematical
+<Multi_key> <s> <q>                    : "√" U221A
+<Multi_key> <asciicircum> <minus>      : "⁻" U207B # Superscript minus
+<Multi_key> <asciitilde> <asciitilde>  : "≈" U2248
+<Multi_key> <asciitilde> <equal>       : "≅" U2245
+<Multi_key> <equal> <asciitilde>       : "≅" U2245
+
+# Arrows
+<Multi_key> <minus> <less>      : "←" U2190
+<Multi_key> <less> <minus>      : "←" U2190
+<Multi_key> <bar> <asciicircum> : "↑" U2191
+<Multi_key> <asciicircum> <bar> : "↑" U2191
+<Multi_key> <greater> <minus>   : "→" U2192
+<Multi_key> <minus> <greater>   : "→" U2192
+<Multi_key> <bar> <v>           : "↓" U2193
+<Multi_key> <v> <bar>           : "↓" U2193
+
+# Musical
+# Default keys have been altered for a more 'logical' version
+<Multi_key> <numbersign> <b>          : "♭" U266D
+<Multi_key> <numbersign> <f>          : "♭" U266D
+<Multi_key> <numbersign> <exclam>     : "♮" U266E
+<Multi_key> <numbersign> <n>          : "♮" U266E
+<Multi_key> <numbersign> <numbersign> : "♯" U266F
+<Multi_key> <numbersign> <s>          : "♯" U266F
