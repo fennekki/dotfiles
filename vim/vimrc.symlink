@@ -32,6 +32,7 @@ Plugin 'vimoutliner/vimoutliner'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 call vundle#end()
 
