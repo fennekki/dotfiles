@@ -1,5 +1,4 @@
-! Also include Inconsolata for fallback
-URxvt*font: xft:Proggy SquareTT for Powerline:pixelsize=16:antialias=false,xft:Fixed:pixelsize=16:antialias=false
-! For proper Proggying
-URxvt*boldFont:
-URxvt*intensityStyles: true
+URxvt*font: xft:Termsyn:pixelsize=16:antialias=false,xft:Fixed:pixelsize=16:antialias=false
+! Should work w Termsyn?
+!URxvt*boldFont:
+!URxvt*intensityStyles: true
