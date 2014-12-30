@@ -1,4 +1,3 @@
-URxvt*font: xft:Termsyn:pixelsize=16:antialias=false,xft:Fixed:pixelsize=16:antialias=false
-! Should work w Termsyn?
-!URxvt*boldFont:
-!URxvt*intensityStyles: true
+!!!cute!!!
+! 11 is... really small.
+URxvt*font: xft:gohufont:pixelsize=14:antialias=false
