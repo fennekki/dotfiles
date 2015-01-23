@@ -134,14 +134,18 @@ set ssop=blank,folds,help,localoptions,sesdir,tabpages,winsize
 set backspace=indent,eol,start
 
 " 4-wide space tabs
-" set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " Replaced by vim-sleuth, I hope
+" set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " C family comment settings
+" First reset the list to just ://
 autocmd FileType c,d,cpp setlocal comments=://
+" Priority increases as you get lower in this list
 autocmd FileType c,d,cpp setlocal comments^=:///
-autocmd FileType c,d,cpp setlocal comments^=s1:/**,mb:\ *,ex:\ */,s1:/*,mb:*,ex:*/
-autocmd FileType d setlocal comments^=s1:/++,mb:\ +,ex:\ +/,s1:/+,mb:+,ex:+/
+autocmd FileType c,d,cpp setlocal comments^=sr:/*,mb:*,ex:*/
+autocmd FileType c,d,cpp setlocal comments^=sr:/**,mb:*,ex:*/
+autocmd FileType d setlocal comments^=sr:/+,mb:+,ex:+/
+autocmd FileType d setlocal comments^=sr:/++,mb:+,ex:+/
 
 " Coolbasic
 autocmd BufNewFile,BufRead *.cb setfiletype coolbasic
@@ -164,9 +168,6 @@ set smartcase
 " Incremental searches w/ hilight
 set incsearch
 set hlsearch
-
-" Automatic indentation
-set autoindent
 
 " STATIC MACRO LISTINGS
 " Include guards
