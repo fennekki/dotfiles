@@ -47,7 +47,8 @@ let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open=1
 
 let g:syntastic_python_python_exec='/usr/bin/env python'
-let g:syntastic_python_checkers=['python']
+" Maybe use pylint? I removed it for now
+let g:syntastic_python_checkers=['flake8']
 
 let g:syntastic_c_checkers=['gcc', 'make']
 
@@ -70,6 +71,9 @@ let g:airline_symbols.whitespace='Ξ'
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf=expand('~/.vim/ycm_extra_conf.py')
+let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_collect_identifiers_from_tags_files=1
 
 " vim-tags
 let g:vim_tags_auto_generate=1
@@ -81,6 +85,8 @@ let g:vim_tags_extension='.tags'
 let g:vim_tags_cache_dir=expand('~/.vim')
 
 " UltiSnips
+let g:UltiSnipsSnippetsDir=$HOME.'/.vim/UltiSnips/'
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsExpandTrigger='<f10>'
 let g:UltiSnipsListSnippets='<c-f10>'
 let g:UltiSnipsJumpForwardTrigger='<f10>'
