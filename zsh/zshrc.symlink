@@ -24,5 +24,19 @@ do
     source $file
 done
 
+# Source local zshrcs
+
+if [[ -f "$HOME/.zshrc-local" ]]; then
+    source $HOME/.zshrc-local
+fi
+
+if [[ -f "$HOME/.zshrc.local" ]]; then
+    source $HOME/.zshrc.local
+fi
+
+if [[ -f "$HOME/.local.zsh" ]]; then
+    source $HOME/.local.zsh
+fi
+
 # Source environment
 source $SH_FILES/environment.sh
