@@ -21,9 +21,9 @@ then
     echo $PWD
     if [ "x$VIM_DEPLOY_NO_SYSTEM_CLANG" != "x" ]
     then
-        sh ./install.sh --clang-completer --omnisharp-completer
+        python2 ./install.py --clang-completer --omnisharp-completer
     else
-        sh ./install.sh --clang-completer --system-libclang --omnisharp-completer
+        python2 ./install.py --clang-completer --system-libclang --omnisharp-completer
     fi
 fi
 
