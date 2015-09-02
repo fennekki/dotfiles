@@ -39,6 +39,13 @@ except NameError:
     # No custom flags
     custom_flags = []
 
+# Do we have custom project root?
+try:
+    project_root
+except NameError:
+    # Try current working dir
+    project_root = os.getcwd()
+
 # Do we have a compilation database specified?
 try:
     if os.path.exists(compilation_database_dir):
@@ -87,7 +94,6 @@ def make_absolute_paths(flags, working_directory):
         if flag in path_flag_names:
             # Mark next as to-be-absolutified
             make_next_absolute = True
-            break
         else:
             for path_flag in path_flag_names:
                 # If it begins with a path flag (say, --sysroot=)...
@@ -101,6 +107,9 @@ def make_absolute_paths(flags, working_directory):
 
         if new_flag:
             new_flags.append(new_flag)
+        else:
+            # Just carry current one
+            new_flags.append(flag)
 
     # Finally, return
     return new_flags
@@ -175,8 +184,8 @@ def FlagsForFile(filename, **kwargs):
             # We don't have flags for this!
             return None
 
-        this_dir = this_script_dir()
-        ret_flags = make_absolute_paths(flags, this_dir)
+        # See MUCH higher for project_root
+        ret_flags = make_absolute_paths(flags, project_root)
 
     return {
         'flags': ret_flags,
