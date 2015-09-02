@@ -34,8 +34,7 @@ cpp_flags = ['-std=c11',
 
 # Do we have additional flags?
 try:
-    if custom_flags:
-        flags.extend(custom_flags)
+    custom_flags
 except NameError:
     # No custom flags
     custom_flags = []
@@ -48,7 +47,7 @@ try:
         database = None
 except NameError:
     # compilation_database_dir wasn't defined
-    pass
+    database = None
 
 
 c_sources = ['.c']
@@ -154,7 +153,7 @@ def get_compilation_info(filename):
         return None
 
 
-def file_flags(filename, **kwargs):
+def FlagsForFile(filename, **kwargs):
     compilation_info = get_compilation_info(filename)
 
     if compilation_info is not None:
@@ -163,14 +162,15 @@ def file_flags(filename, **kwargs):
                                         compilation_info.compiler_working_dir)
     else:
         lang = get_lang(filename)
+        flags = []
         if lang == "C":
-            flags = [].extend(common_flags) \
-                      .extend(c_flags) \
-                      .extend(custom_flags)
+            flags.extend(common_flags)
+            flags.extend(c_flags)
+            flags.extend(custom_flags)
         elif lang == "C++":
-            flags = [].extend(common_flags) \
-                      .extend(cpp_flags) \
-                      .extend(custom_flags)
+            flags.extend(common_flags)
+            flags.extend(cpp_flags)
+            flags.extend(custom_flags)
         else:
             # We don't have flags for this!
             return None
