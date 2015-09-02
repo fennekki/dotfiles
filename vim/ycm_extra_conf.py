@@ -61,7 +61,7 @@ c_sources = ['.c']
 c_headers = ['.h']
 
 cpp_sources = ['.cpp', '.cc', '.cxx', '.C', '.c++']
-cpp_headers = ['.hpp', '.hh', '.hxx', '.H', '.h++']
+cpp_headers = ['.hpp', '.hh', '.hxx', '.H', '.h++', '.h']
 
 # Absolutify after these
 path_flag_names = ['-isystem', '-I', '-iquote', '--sysroot=']
@@ -117,22 +117,32 @@ def make_absolute_paths(flags, working_directory):
 
 def is_header(filename):
     extension = os.path.splitext(filename)[1]
-    if extension in c_headers:
-        return "C"
-    elif extension in cpp_headers:
-        return "C++"
-    else:
-        return None
+    if extension in cpp_headers or extension in c_headers:
+        return True
+    return False
 
 
 def get_lang(filename):
     extension = os.path.splitext(filename)[1]
+    # .h can be either....
+    if extension in cpp_headers or extension in cpp_sources:
+        return "C++"
     if extension in c_headers or extension in c_sources:
         return "C"
-    elif extension in cpp_headers or extension in cpp_sources:
-        return "C++"
-    else:
-        return None
+    return None
+
+
+def search_ext_list(ext_list, filename):
+    basename = os.path.splitext(filename)[0]
+
+    for ext in ext_list:
+        replacement_file = basename + ext
+        if os.path.exists(replacement_file):
+            compilation_info = database.GetCompilationInfoForFile(
+                replacement_file)
+            if compilation_info and compilation_info.compiler_flags:
+                return compilation_info
+    return None
 
 
 # For when we have a database but it doesn't have header info
@@ -142,24 +152,12 @@ def get_compilation_info(filename):
         if compilation_info and compilation_info.compiler_flags:
             return compilation_info
         else:
-            lang_header = is_header(filename)
-            basename = os.path.splitext(filename)[0]
-            if lang_header == "C":
-                ext_list = c_sources
-            elif lang_header == "C++":
-                ext_list = cpp_sources
-            else:
-                return None
-
-            for ext in ext_list:
-                replacement_file = basename + ext
-                if os.path.exists(replacement_file):
-                    compilation_info = database.GetCompilationInfoForFile(
-                        replacement_file)
-                    if compilation_info and compilation_info.compiler_flags:
-                        return compilation_info
-    else:
-        return None
+            if is_header(filename):
+                res = search_ext_list(cpp_sources)
+                if res is None:
+                    res = search_ext_list(c_sources)
+                return res
+    return None
 
 
 def FlagsForFile(filename, **kwargs):
