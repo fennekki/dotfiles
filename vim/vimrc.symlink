@@ -51,7 +51,10 @@ let g:syntastic_python_python_exec='/usr/bin/env python'
 " Maybe use pylint? I removed it for now
 let g:syntastic_python_checkers=['flake8']
 
-let g:syntastic_c_checkers=['gcc', 'make']
+"let g:syntastic_c_checkers=['gcc', 'make']
+" Should be handled by YCM
+let g:syntastic_c_checkers=[]
+let g:syntastic_cpp_checkers=[]
 
 let g:syntastic_xml_chekers=['xmllint']
 

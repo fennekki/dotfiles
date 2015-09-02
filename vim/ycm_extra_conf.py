@@ -11,17 +11,16 @@ common_flags = ['-Wall',
                 '-Wextra',
                 '-Werror',
                 '-I', '.',
-                '-I',
                 '-isystem', '/usr/include',
                 '-isystem', '/usr/local/include']
 
 # C flags
-c_flags = ['-std=c99',
-           '-x', 'c']
+c_flags = ['-x', 'c',
+           '-std=c99']
 
 # Need to add standard libraries here
-cpp_flags = ['-std=c++11',
-             '-x', 'c++',
+cpp_flags = ['-x', 'c++',
+             '-std=c++11',
              '-fno-exceptions',
              '-isystem',
              '/usr/lib/gcc/x86_64-pc-linux-gnu/4.9.3/include/g++-v4',
@@ -171,12 +170,12 @@ def FlagsForFile(filename, **kwargs):
         lang = get_lang(filename)
         flags = []
         if lang == "C":
-            flags.extend(common_flags)
             flags.extend(c_flags)
+            flags.extend(common_flags)
             flags.extend(custom_flags)
         elif lang == "C++":
-            flags.extend(common_flags)
             flags.extend(cpp_flags)
+            flags.extend(common_flags)
             flags.extend(custom_flags)
         else:
             # We don't have flags for this!
