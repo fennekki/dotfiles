@@ -20,7 +20,7 @@ c_flags = ['-std=c99',
            '-x', 'c']
 
 # Need to add standard libraries here
-cpp_flags = ['-std=c11',
+cpp_flags = ['-std=c++11',
              '-x', 'c++',
              '-fno-exceptions',
              '-isystem',
