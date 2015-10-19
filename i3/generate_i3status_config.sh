@@ -10,12 +10,10 @@ BATTERY_NUM=${BATTERY_NUM:-"DISABLED"}
 echo '
 general {
         colors = true
-        interval = 5
+        interval = 1
 }
 
-order += "ipv6"
-#order += "run_watch DHCP"
-#order += "run_watch VPN"'
+order += "ipv6"'
 
 if [ "$WIRELESS_NAME" != "DISABLED" ]
 then
@@ -31,32 +29,30 @@ then
     echo 'order += "battery '$BATTERY_NUM'"'
 fi
 
-echo '#order += "disk /"
-order += "load"
+echo 'order += "load"
 order += "volume master"
 order += "tztime local"
 
+ipv6 {
+    format_up = "%ip"
+    format_down = "4"
+}
+
 wireless '$WIRELESS_NAME' {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_up = "%ip:%essid:%quality"
+        format_down = "⇩"
 }
 
 ethernet '$WIRED_NAME' {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+        format_up = "%ip"
+        format_down = "⬇"
 }
 
 battery '$BATTERY_NUM' {
-        format = "%status %percentage %remaining"
-}
-
-run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
-}
-
-run_watch VPN {
-        pidfile = "/var/run/vpnc/pid"
+        integer_battery_capacity = true
+        hide_seconds = true
+        format = "%percentage %remaining"
+        format_down = "-"
 }
 
 tztime local {
@@ -64,15 +60,12 @@ tztime local {
 }
 
 load {
-        format = "%1min %5min %15min"
-}
-
-disk "/" {
-        format = "%free (%avail) / %total"
+        format = "%5min"
 }
 
 volume master {
     format = "♪ %volume"
+    format_muted = "♪M%volume"
     device = "default"
     mixer = "Master"
     mixer_idx = 0

@@ -1,7 +1,15 @@
 #!/bin/sh
 
 DATE="$(date +'%s')"
-FILEPATH="$HOME/Pictures/screenshot/${DATE}.png"
+FILE_BASENAME="$HOME/Pictures/screenshot/${DATE}"
+FILEPATH="$FILE_BASENAME.png"
+
+# Check if it exists
+# TODO: still need to check for MULTIPLE same
+if [ -f "$FILEPATH" ]
+then
+    FILEPATH="$FILE_BASENAME.a.png"
+fi
 
 if [ "$1" = "select" -o "$2" = "select" ]
 then

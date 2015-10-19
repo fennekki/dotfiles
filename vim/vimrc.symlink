@@ -138,7 +138,7 @@ set switchbuf=usetab,newtab
 set formatoptions=tcroq
 
 " Session options
-set ssop=blank,folds,help,localoptions,sesdir,tabpages,winsize
+set ssop=blank,folds,help,sesdir,tabpages,winsize
 
 " Allow backspacing
 set backspace=indent,eol,start

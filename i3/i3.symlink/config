@@ -87,9 +87,16 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Alsa mute etc
 bindsym XF86AudioRaiseVolume exec "amixer set Master playback 5+; killall -USR1 i3status"
 bindsym XF86AudioLowerVolume exec "amixer set Master playback 5-; killall -USR1 i3status"
 bindsym XF86AudioMute exec "amixer set Master toggle; killall -USR1 i3status"
+
+# cmus remote
+bindsym XF86AudioPlay exec "cmus-remote -u"
+bindsym XF86AudioStop exec "cmus-remote -s"
+bindsym XF86AudioNext exec "cmus-remote -n"
+bindsym XF86AudioPrev exec "cmus-remote -r"
 
 # Brightness
 bindsym XF86MonBrightnessUp exec "xbacklight +5"
