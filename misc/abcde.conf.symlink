@@ -22,7 +22,7 @@ MAXPROCS='4' # Obviously
 PADTRACKS='y'
 EXTRAVERBOSE='2' # I guess?
 EJECTCD='y'
-ID3TAGV='2' # Duh
+ID3TAGV='id3v2.4' # Duh
 
 mungefilename ()
 {
