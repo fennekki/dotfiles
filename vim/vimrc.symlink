@@ -20,7 +20,8 @@ endif
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/goyo.vim'
