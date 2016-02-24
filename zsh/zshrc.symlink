@@ -1,6 +1,3 @@
-autoload -Uz compinit
-compinit
-
 # A lot of this is lifted from holman
 # it's strictly speaking somewhat different, I guess?
 ZSH_FILES=$HOME/.dotfiles/zsh
