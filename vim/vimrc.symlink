@@ -8,7 +8,7 @@ autocmd!
 let mapleader=','
 
 " Windows plays by its own rules
-if has('win32')
+if has('win64') || has('win32') || has('win32unix')
     let vimrc_vimfiles_dir=expand('~/vimfiles')
 else
     let vimrc_vimfiles_dir=expand('~/.vim')
@@ -21,7 +21,10 @@ call vundle#begin(path)
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'altercation/vim-colors-solarized'
+if has('gui_running') || (has('win64') && !has('win32') && !has('win32unix'))
+    " Windows don't really like the colour scheme
+    Plugin 'altercation/vim-colors-solarized'
+endif
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/goyo.vim'
