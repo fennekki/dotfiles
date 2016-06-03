@@ -14,8 +14,8 @@ else
     let vimrc_vimfiles_dir=expand('~/.vim')
 endif
 
-let path=vimrc_vimfiles_dir . '/bundle'
-let &rtp.=',' . vimrc_vimfiles_dir . '/bundle/Vundle.vim'
+let path=expand(vimrc_vimfiles_dir . '/bundle')
+let &rtp.=',' . expand(vimrc_vimfiles_dir . '/bundle/Vundle.vim')
 
 call vundle#begin(path)
 
