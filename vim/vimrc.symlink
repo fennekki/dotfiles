@@ -19,7 +19,7 @@ let &rtp.=',' . vimrc_vimfiles_dir . '/bundle/Vundle.vim'
 
 call vundle#begin(path)
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 if has('gui_running') || (has('win64') && !has('win32') && !has('win32unix'))
     " Windows don't really like the colour scheme
