@@ -21,7 +21,7 @@ call vundle#begin(path)
 
 Plugin 'VundleVim/Vundle.vim'
 
-if has('gui_running') || (has('win64') && !has('win32') && !has('win32unix'))
+if has('gui_running') || (!has('win64') && !has('win32') && !has('win32unix'))
     " Windows don't really like the colour scheme
     Plugin 'altercation/vim-colors-solarized'
 endif
