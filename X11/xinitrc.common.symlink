@@ -17,4 +17,7 @@ fi
 
 xautolock -time 20 -locker 'i3lock -e' -secure&
 dunst &
-urxvtd -f -o # urxvt daemon, using client as term
+
+if [ "$DISABLE_URXVTD" != "true" ]
+    then urxvtd -f -o # urxvt daemon, using client as term
+fi
