@@ -19,11 +19,11 @@ if [ ! -e $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]
 then
     cd "$HOME/.vim/bundle/YouCompleteMe" &&\
     echo $PWD
-    if [ "x$VIM_DEPLOY_NO_SYSTEM_CLANG" != "x" ]
+    if [ "x$VIM_DEPLOY_SYSTEM_CLANG" != "x" ]
     then
-        python2 ./install.py --clang-completer --omnisharp-completer
+        python2 ./install.py --system-libclang --all
     else
-        python2 ./install.py --clang-completer --system-libclang --omnisharp-completer
+        python2 ./install.py --all
     fi
 fi
 

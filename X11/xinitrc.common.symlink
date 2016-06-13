@@ -15,9 +15,14 @@ if [ "$DISABLE_COMPTON" != "true" ]
     then LANG=C compton -cb --blur-background --blur-kern=11x11gaussian --blur-background-fixed
 fi
 
+if [ "$DISABLE_URXVTD" != "true" ]
+    then urxvtd -f -o
+fi
+
+if [ $ENABLE_MLTERM = "true" ]
+    then mlterm -j genuine -@ 0
+fi
+
 xautolock -time 20 -locker 'i3lock -e' -secure&
 dunst &
 
-if [ "$DISABLE_URXVTD" != "true" ]
-    then urxvtd -f -o # urxvt daemon, using client as term
-fi
