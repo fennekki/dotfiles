@@ -25,6 +25,8 @@ if has('gui_running') || (!has('win64') && !has('win32') && !has('win32unix'))
     " Windows don't really like the colour scheme
     Plugin 'altercation/vim-colors-solarized'
 endif
+
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/goyo.vim'
