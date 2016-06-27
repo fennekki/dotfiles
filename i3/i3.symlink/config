@@ -108,8 +108,6 @@ bindsym XF86Sleep exec "i3-sensible-terminal -e su -c pm-suspend"
 
 bindsym --release Print exec "~/.dotfiles/scripts/maimer.sh"
 bindsym --release Shift+Print exec "~/.dotfiles/scripts/maimer.sh select"
-bindsym --release $mod+Print exec "~/.dotfiles/scripts/maimer.sh imgur"
-bindsym --release $mod+Shift+Print exec "~/.dotfiles/scripts/maimer.sh imgur select"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

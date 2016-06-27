@@ -8,7 +8,15 @@ FILEPATH="$FILE_BASENAME.png"
 # TODO: still need to check for MULTIPLE same
 if [ -f "$FILEPATH" ]
 then
-    FILEPATH="$FILE_BASENAME.a.png"
+    FILE_COUNTER=0
+
+    while [ -f "$FILEPATH" ]
+    do
+        echo $FILEPATH
+        FILE_COUNTER="$((FILE_COUNTER + 1))"
+        FILEPATH="$FILE_BASENAME.$FILE_COUNTER.png"
+    done
+    echo $FILEPATH
 fi
 
 if [ "$1" = "select" -o "$2" = "select" ]
@@ -16,9 +24,4 @@ then
     maim -s --gracetime="1.0" "$FILEPATH"
 else
     maim "$FILEPATH"
-fi
-
-if [ "$1" = "imgur" -o "$2" = "imgur" ]
-then
-    "$HOME/.dotfiles/scripts/imgurbash.sh" "$FILEPATH"
 fi
