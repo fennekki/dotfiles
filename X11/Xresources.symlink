@@ -1,4 +1,6 @@
-URxvt*depth: 32
+! URxvt*depth: 32
+! Debian is kill if we use 32 here. Plus it's not like anything uses truecolour.
+URxvt*depth: 24
 URxvt*geometry: 80x32
 
 URxvt*skipScroll: true
