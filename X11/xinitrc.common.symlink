@@ -19,7 +19,7 @@ if [ "$DISABLE_URXVTD" != "true" ]
     then urxvtd -f -o
 fi
 
-if [ $ENABLE_MLTERM = "true" ]
+if [ "$ENABLE_MLTERM" = "true" ]
     then mlterm -j genuine -@ 0
 fi
 
