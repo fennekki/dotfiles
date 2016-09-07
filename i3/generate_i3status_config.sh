@@ -1,7 +1,7 @@
 #!/bin/sh
 WIRELESS_NAME="$(ip link|awk '{match($2, /(wl)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
 WIRED_NAME="$(ip link|awk '{match($2, /(en|eth)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
-MOBILE_NAME="$(ip link|awk '{match($2, /(enx)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
+MOBILE_NAME="$(ip link|awk '{match($2, /(enx|wwp)[a-z0-9]*/);if (RSTART != 0) print substr($2, RSTART, RLENGTH)}'|head -1)"
 BATTERY_0="$(ls /sys/class/power_supply/|grep BAT0|head -1|sed 's/BAT//')"
 BATTERY_1="$(ls /sys/class/power_supply/|grep BAT1|head -1|sed 's/BAT//')"
 BATTERY_2="$(ls /sys/class/power_supply/|grep BAT2|head -1|sed 's/BAT//')"
