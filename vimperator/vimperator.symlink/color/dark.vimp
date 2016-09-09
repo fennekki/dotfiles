@@ -1,0 +1,35 @@
+hi Hint font-family: monospace; font-size: 8pt; font-weight: normal; color: #80a6e3; background-color: #212121; border: none; padding: 0px 3px 0px 3px; 
+hi HintElem background-color: #e0e0e0; 
+hi HintActive background-color: Red;
+
+hi StatusLine     color: #aaaaaa; background: transparent; font-weight: normal; font-size: 8pt;
+hi Normal     color:  #aaaaaa;  background: #212121; font-size: 8pt;
+hi CmdLine    color:  #999999;  background: #212121; font-size: 8pt;
+hi InfoMsg    color:  #acbc90;  background: #212121; font-size: 8pt;
+hi ModeMsg    color:  #c0ff3e;  background: #212121; font-size: 8pt;
+hi MoreMsg    color:  #6a4acd; background: #212121;
+hi LineNr   color:  Orange; background: #212121; font-size: 8pt;
+hi Question   color: Purple;  background: #212121;  font-size: 8pt;
+hi Mapping    color: Purple;  background: #212121;  font-size: 8pt;
+hi WarningMsg   color: Orange;  background: #212121;  font-size: 8pt;
+hi ErrorMsg   color: #212121;  background: red;  font-size: 8pt;
+hi NonText    background: #212121;
+hi Null     color: CornflowerBlue;
+hi Tag      color: CornflowerBlue;
+hi Number   color: CornflowerBlue;
+
+hi CompTitle    background: #2b2b2b; color: acbc90;
+hi CompTitle>*  color: #cb4b16; border-bottom: 1px solid #3c3c3f; padding: 1px 0.5ex; text-shadow: none;
+hi CompItem[selected] color: d0d0d0;  background: #2b2b2b; box-shadow: none;
+hi CompDesc     color: #d33682;
+hi Filter      background: #212121; color: #ccdc90; border: none;
+
+hi Title    color:  #acbc90; background: 3f3f3f;
+hi Indicator    color:  #94bff3;
+hi String   color:  #212121;
+hi Number   color:  #212121;
+hi Object   color: Maroon;
+hi Function   color:  Navy;
+hi URL    color:  #acbc90;
+
+hi TabNumber  color: #212121; font-weight: bold; font-size:8pt;
