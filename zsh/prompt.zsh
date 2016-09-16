@@ -8,7 +8,8 @@ PROMPT='%{$fg_no_bold[green]%}%2~ %{$fg_bold[blue]%}%#%{%b%} '
 if [[ -a /sys/class/power_supply/BAT0 ]]
 then
     RPROMPT="$RPROMPT "'[`cat /sys/class/power_supply/BAT0/status` `cat /sys/class/power_supply/BAT0/capacity`%%]'
-elif [[ -a /sys/class/power_supply/BAT1 ]]
+fi
+if [[ -a /sys/class/power_supply/BAT1 ]]
 then
     RPROMPT="$RPROMPT "'[`cat /sys/class/power_supply/BAT1/status` `cat /sys/class/power_supply/BAT1/capacity`%%]'
 fi
