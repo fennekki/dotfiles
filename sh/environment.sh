@@ -19,5 +19,5 @@ fi
 
 export PAGER="$(which less)"
 export EDITOR="$(which vim)"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export SHELL="$(which zsh)"
