@@ -19,6 +19,7 @@ fi
 
 export PAGER="$(which less)"
 export EDITOR="$(which vim)"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.secondlife-install:$PATH"
 export SHELL="$(which zsh)"
 export GPG_TTY="$(tty)"
+
