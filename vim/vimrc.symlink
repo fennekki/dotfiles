@@ -156,7 +156,8 @@ set switchbuf=usetab,newtab
 
 " Wrap to textwidth, wrap comments, insert comment leader on LF,
 " insert comment leader on o, allow formatting with gq{motion}
-set formatoptions=tcroq
+" Pick up indentation from the *second* line
+set formatoptions=tcroq2
 
 " Session options
 set ssop=blank,folds,help,sesdir,tabpages,winsize
@@ -168,10 +169,14 @@ set backspace=indent,eol,start
 " Replaced by vim-sleuth, I hope
 " set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
+" Default to hash comments instead of C comments (???)
+set comments=b:#
+
 " C family comment settings
-" First reset the list to just ://
-autocmd FileType c,d,cpp setlocal comments=://
+" Remove text formatting from formatoptions
+autocmd FileType c,d,cpp setlocal fo-=t
 " Priority increases as you get lower in this list
+autocmd FileType c,d,cpp setlocal comments^=://
 autocmd FileType c,d,cpp setlocal comments^=:///
 autocmd FileType c,d,cpp setlocal comments^=sr:/*,mb:*,ex:*/
 autocmd FileType c,d,cpp setlocal comments^=sr:/**,mb:*,ex:*/
