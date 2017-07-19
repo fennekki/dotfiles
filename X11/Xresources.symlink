@@ -35,6 +35,8 @@ URxvt.url-select.underline: true
 ! Turn on/off ISO 14755 (default enabled).
 URxvt*iso14755: false
 URxvt*iso14755_52: false
+URxvt*inputMethod: ibus
+URxvt*preeditType: OverTheSpot
 
 ! Solarized color scheme for the X Window System
 !
