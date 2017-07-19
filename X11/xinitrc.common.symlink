@@ -23,6 +23,12 @@ if [ "$ENABLE_MLTERM" = "true" ]
     then mlterm -j genuine -@ 0
 fi
 
-xautolock -time 20 -locker 'i3lock -e' -secure&
+if [ "$ENABLE_XSSLOCK" = "true" ]
+then
+    xset 1200
+    xss-lock -- /usr/bin/i3lock -nef&
+else
+    xautolock -time 20 -locker 'i3lock -ef' -secure&
+fi
 dunst &
 
