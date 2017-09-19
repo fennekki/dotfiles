@@ -21,7 +21,7 @@ fi
 
 if [ "$1" = "select" -o "$2" = "select" ]
 then
-    maim -s --gracetime="1.0" "$FILEPATH"
+    maim -d 0.1 -s -o "$FILEPATH"
 else
     maim "$FILEPATH"
 fi
