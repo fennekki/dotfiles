@@ -79,7 +79,8 @@ let g:syntastic_xml_chekers=['xmllint']
 let g:syntastic_html_checkers=['tidy']
 
 " chktex is annoying and, um, often wrong
-let g:syntastic_tex_checkers=['lacheck']
+" HELL all latex checking is HELL
+let g:syntastic_tex_checkers=[]
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf=vimrc_vimfiles_dir . '/ycm_extra_conf.py'

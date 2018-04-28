@@ -1,3 +1,0 @@
-SH_FILES=$HOME/.dotfiles/sh
-
-source $SH_FILES/environment.sh
