@@ -109,7 +109,6 @@ bindsym XF86Sleep exec "i3-sensible-terminal -e su -c pm-suspend"
 # Lock! It's in explorer bc screw you
 bindsym XF86Explorer exec "sleep 1; xset s activate"
 
-bindsym --release Print exec "~/.dotfiles/scripts/maimer.sh"
 bindsym --release Shift+Print exec "~/.dotfiles/scripts/maimer.sh select"
 
 # reload the configuration file
