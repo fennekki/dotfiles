@@ -186,6 +186,9 @@ autocmd FileType python setlocal fo-=t
 " also set tw
 autocmd FileType python setlocal tw=72
 
+" Default to latex
+let g:tex_flavor = "latex"
+
 " Smarter searching
 set ignorecase
 set smartcase
