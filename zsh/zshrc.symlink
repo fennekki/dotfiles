@@ -7,7 +7,15 @@ SH_FILES=$HOME/.dotfiles/sh
 typeset -U config_files
 config_files=($ZSH_FILES/*.zsh)
 
-# Load plugins first
+# Load config first
+for file in $config_files
+do
+    source $file
+done
+
+# Setup initial prompt
+_dotfiles_prompt_pre_plugin
+
 ADOTDIR=$HOME/.antigen
 source $ZSH_FILES/antigen/antigen.zsh
 
@@ -16,10 +24,8 @@ source $ZSH_FILES/plugins/plugins.zsh
 # Finalize plugins
 antigen apply
 
-for file in $config_files
-do
-    source $file
-done
+# Finalise prompt
+_dotfiles_prompt_post_plugin
 
 # Source local zshrcs
 
