@@ -12,7 +12,7 @@ if [ "$PIXEL_FONTS" = "true" ]
 fi
 
 if [ "$DISABLE_COMPTON" != "true" ]
-    then LANG=C compton -cb --blur-background --blur-kern=11x11gaussian --blur-background-fixed
+    then LANG=C compton -b --blur-background --blur-kern=11x11gaussian --blur-background-fixed
 fi
 
 if [ "$DISABLE_URXVTD" != "true" ]
