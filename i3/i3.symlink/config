@@ -88,9 +88,9 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Alsa mute etc
-bindsym XF86AudioRaiseVolume exec "amixer set Master playback 5%+; killall -USR1 i3status"
-bindsym XF86AudioLowerVolume exec "amixer set Master playback 5%-; killall -USR1 i3status"
-bindsym XF86AudioMute exec "amixer set Master toggle; killall -USR1 i3status"
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse set Master playback 5%+; killall -USR1 i3status"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master playback 5%-; killall -USR1 i3status"
+bindsym XF86AudioMute exec "amixer -D pulse set Master toggle; killall -USR1 i3status"
 
 # cmus remote
 bindsym XF86AudioPlay exec "cmus-remote -u"
