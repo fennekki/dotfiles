@@ -1,0 +1,2 @@
+nvim.xdg_config/*
+!nvim.xdg_config/init.vim
