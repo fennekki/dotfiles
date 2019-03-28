@@ -1,0 +1,13 @@
+# Start i3bar
+# Use solarized colours here too
+bar {
+    status_command i3status
+    colors {
+        background $base03
+        statusline $base1
+        # Border Background Text
+        focused_workspace $green $base02 $base1
+        active_workspace $base02 $base02 $base1
+        inactive_workspace $base02 $base03 $base0
+    }
+}

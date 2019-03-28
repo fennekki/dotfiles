@@ -1,2 +1,4 @@
 set follow=false
 set show_remaining_time=true
+set status_display_program=~/.config/cmus/cmus_status_display.sh
+

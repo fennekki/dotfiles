@@ -13,9 +13,15 @@ BATTERY_0=${BATTERY_0:-"DISABLED"}
 BATTERY_1=${BATTERY_1:-"DISABLED"}
 BATTERY_2=${BATTERY_2:-"DISABLED"}
 
+SOLARIZED_YELLOW="#b58900"
+SOLARIZED_RED="#dc322f"
+SOLARIZED_GREEN="#859900"
 echo '
 general {
         colors = true
+        color_good = "'$SOLARIZED_GREEN'"
+        color_bad = "'$SOLARIZED_RED'"
+        color_degraded = "'$SOLARIZED_YELLOW'"
         interval = 1
 }
 

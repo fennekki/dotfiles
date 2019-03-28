@@ -1,0 +1,28 @@
+# Start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Alsa mute etc
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse set Master playback 5%+; killall -USR1 i3status"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master playback 5%-; killall -USR1 i3status"
+bindsym XF86AudioMute exec "amixer -D pulse set Master toggle; killall -USR1 i3status"
+
+# cmus remote
+bindsym XF86AudioPlay exec "cmus-remote -u"
+bindsym XF86AudioStop exec "cmus-remote -s"
+bindsym XF86AudioNext exec "cmus-remote -n"
+bindsym XF86AudioPrev exec "cmus-remote -r"
+
+# Brightness
+bindsym XF86MonBrightnessUp exec "xbacklight +5"
+bindsym XF86MonBrightnessDown exec "xbacklight -5"
+
+# Suspend and friends
+bindsym XF86Suspend exec "i3-sensible-terminal -e su -c pm-hibernate"
+bindsym XF86Sleep exec "i3-sensible-terminal -e su -c pm-suspend"
+
+# Lock (On explorer, the most suitable key available)
+bindsym XF86Explorer exec "sleep 1; xset s activate"
+
+# Screenshot
+bindsym --release Shift+Print exec "~/.dotfiles/scripts/maimer.sh select"
+

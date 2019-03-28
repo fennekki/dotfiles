@@ -1,0 +1,25 @@
+set $base03  #002b36
+set $base02  #073642
+set $base01  #586e75
+set $base00  #657b83
+set $base0   #839496
+set $base1   #93a1a1
+set $base2   #eee8d5
+set $base3   #fdf6e3
+set $yellow  #b58900
+set $orange  #cb4b16
+set $red     #dc322f
+set $magenta #d33682
+set $violet  #6c71c4
+set $blue    #268bd2
+set $cyan    #2aa198
+set $green   #859900
+
+# Class                 Border  Bg      Text    Indicator Child border
+client.focused          $base02 $base02 $base1  $green    $base02
+client.focused_inactive $base02 $base03 $base0  $orange   $base02
+client.unfocused        $base03 $base03 $base01 $base1    $base02
+client.urgent           $red    $base02 $base1  $orange   $red
+client.placeholder      #000000 $base03 $orange  #000000   $orange
+
+client.background               $base03

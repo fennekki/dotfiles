@@ -32,3 +32,5 @@ else
 fi
 dunst &
 
+# Create i3 config from parts and ~/.i3.local
+sh ~/.i3/compile-config.sh
