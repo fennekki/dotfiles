@@ -24,10 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'honza/vim-snippets'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
 Plugin 'peterhoeg/vim-qml'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
@@ -105,23 +102,11 @@ let g:UltiSnipsListSnippets='<c-f10>'
 let g:UltiSnipsJumpForwardTrigger='<f10>'
 let g:UltiSnipsJumpBackwardTrigger='<s-f10>'
 
-" Goyo
-let g:goyo_width=92
-let g:goyo_margin_top=4
-let g:goyo_margin_bottom=4
-let g:goyo_linenr=0
-map <Leader>G :Goyo<CR>
-
-" Limelight
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
-let g:limelight_conceal_ctermfg='237'
-map <Leader>L :Limelight!!<CR>
-
 " Plugins loaded, enable syntax
 syntax enable
 
-set modelines=3
+set modelines=0
+set nomodeline
 set encoding=utf-8
 
 " For plugin compatibility
