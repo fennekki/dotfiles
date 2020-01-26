@@ -20,6 +20,6 @@ client.focused          $base02 $base02 $base1  $green    $base02
 client.focused_inactive $base02 $base03 $base0  $orange   $base02
 client.unfocused        $base03 $base03 $base01 $base1    $base02
 client.urgent           $red    $base02 $base1  $orange   $red
-client.placeholder      #000000 $base03 $orange  #000000   $orange
+client.placeholder      #000000 $base03 $orange #000000   $orange
 
 client.background               $base03

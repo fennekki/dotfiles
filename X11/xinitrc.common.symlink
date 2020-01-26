@@ -25,7 +25,8 @@ fi
 
 if [ "$ENABLE_XSSLOCK" = "true" ]
 then
-    xset 1200
+    xset s 1200
+    xset s expose
     xss-lock -- /usr/bin/i3lock -nef&
 else
     xautolock -time 20 -locker 'i3lock -ef' -secure&
