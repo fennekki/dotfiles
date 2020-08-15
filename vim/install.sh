@@ -24,7 +24,7 @@ cd "$HOME/.vim/bundle/YouCompleteMe" &&\
 echo $PWD
 if [ "x$VIM_DEPLOY_SYSTEM_CLANG" != "x" ]
 then
-    python2 ./install.py --system-libclang --all
+    python3 ./install.py --system-libclang --all
 else
-    python2 ./install.py --all
+    python3 ./install.py --all
 fi
