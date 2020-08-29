@@ -7,30 +7,18 @@ fi
 
 xrdb -load $HOME/.Xresources
 
-if [ "$PIXEL_FONTS" = "true" ]
-    then xrdb -override $HOME/.Xresources_pixel
-fi
-
 if [ "$DISABLE_COMPTON" != "true" ]
-    then LANG=C compton -b
+    then LANG=C compton &
 fi
 
 if [ "$DISABLE_URXVTD" != "true" ]
     then urxvtd -f -o
 fi
 
-if [ "$ENABLE_MLTERM" = "true" ]
-    then mlterm -j genuine -@ 0
-fi
+xset s 1200
+xset s expose
+xss-lock -- /usr/bin/i3lock -nef&
 
-if [ "$ENABLE_XSSLOCK" = "true" ]
-then
-    xset s 1200
-    xset s expose
-    xss-lock -- /usr/bin/i3lock -nef&
-else
-    xautolock -time 20 -locker 'i3lock -ef' -secure&
-fi
 dunst &
 
 # Create i3 config from parts and ~/.i3.local

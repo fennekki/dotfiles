@@ -4,34 +4,21 @@ URxvt*depth: 24
 URxvt*geometry: 80x32
 
 URxvt*skipScroll: true
-URxvt*font: xft:Inconsolata-g:size=11,xft:Inconsolata-g for Powerline:size=11
+URxvt*font: xft:DejaVu Sans Mono:size=11
 URxvt*urgentOnBell: true
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: true
 URxvt*scrollTtyKeypress: true
 URxvt*saveLines: 1024
 URxvt*skipBuiltinGlyphs: false
-! True: handle Meta (Alt) + keypress to set the 8th bit. False: handle Meta (Alt) + keypress as an escape prefix [default].
 URxvt*meta8: false
-! True: the mouse wheel scrolls a page full. False: the mouse wheel scrolls five lines [default].
 URxvt*mouseWheelScrollPage: false
-! True: store tabs as wide characters. False: interpret tabs as cursor movement only; option "-ptab".
-!URxvt*pastableTabs: boolean
 URxvt*cursorBlink: false
 URxvt*cursorUnderline: false
-! True: blank the pointer when a key is pressed or after a set number of seconds of inactivity. False: the pointer is always visible [default].
 URxvt*pointerBlank: false
-! Enables "insecure" mode. Rxvt-unicode offers some escape sequences that echo arbitrary strings like the icon name or the locale. This could
 URxvt*insecure: false
 
-! Specify the reply rxvt-unicode sends to the shell when an ENQ (control-E) character is passed through. It may contain escape values as
 URxvt*answerbackString: 
-! Specifies the program to be started with a URL argument. Used by the "selection-popup" and "matcher" perl extensions.
-URxvt*url-launcher: xdg-open
-URxvt*perl-ext: default,url-select
-URxvt*keysym.C-i: perl:url-select:select_next
-URxvt*url-select.launcher: xdg-open
-URxvt.url-select.underline: true
 ! Turn on/off ISO 14755 (default enabled).
 URxvt*iso14755: false
 URxvt*iso14755_52: false
