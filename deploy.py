@@ -112,12 +112,12 @@ def main():
                 full_filename = os.path.join(subdir, entry.name)
                 basename, extension = os.path.splitext(entry.name)
 
+                if extension == ".xdg_config":
+                    print("XDG dir found:", full_filename)
+                    handle_xdg_config(full_filename, basename, XDG_CONFIG_HOME)
                 if entry.is_dir():
-                        # Only directories are the XDG things
-                    if extension == ".xdg_config":
-                        print("XDG dir found:", full_filename)
-                        handle_xdg_config(full_filename, basename, XDG_CONFIG_HOME)
-                    elif extension == ".xdg_sublink":
+                        # Only directories can be sublinked
+                    if extension == ".xdg_sublink":
                         print("XDG dir (subfile link) found:", full_filename)
                         handle_xdg_sublink(full_filename, basename, XDG_CONFIG_HOME)
 
