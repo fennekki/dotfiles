@@ -1,0 +1,42 @@
+# backend etc
+backend = "glx";
+vsync = "opengl-swc";
+
+glx-no-stencil = true;
+glx-no-rebind-pixmap = true;
+glx-swap-method = "undefined";
+
+# transparency/blur
+menu-opacity = 1.0;
+inactive-opacity = 1.0;
+active-opacity = 1.0;
+frame-opacity = 1.0;
+inactive-opacity-override = false;
+alpha-step = 0.06;
+
+inactive-dim = 0.0;
+
+blur-background = true;
+blur-kern = "5x5gaussian";
+
+
+# shadow
+shadow = false;
+shadow-opacity = 0.75;
+
+shadow-radius = 12;
+shadow-offset-x = -15;
+shadow-offset-y = -15;
+
+clear-shadow = true;
+
+no-dock-shadow = true;
+no-dnd-shadow = true;
+shadow-ignore-shaped = true;
+
+# misc
+mark-wmwin-focused = true;
+mark-ovredir-focues = true;
+detect-rounded-corners = true;
+detect-client-opacity = true;
+dbe = false;
