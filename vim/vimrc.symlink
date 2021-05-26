@@ -14,29 +14,26 @@ else
     let vimrc_vimfiles_dir=expand('~/.vim')
 endif
 
-let path=expand(vimrc_vimfiles_dir . '/bundle')
-let &rtp.=',' . expand(vimrc_vimfiles_dir . '/bundle/Vundle.vim')
+let plug_path=expand(vimrc_vimfiles_dir . '/plugged')
+call plug#begin(plug_path)
 
-call vundle#begin(path)
+Plug 'https://github.com/SirVer/ultisnips'
+Plug 'https://github.com/ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'https://github.com/vim-syntastic/syntastic'
+Plug 'https://github.com/tomtom/tcomment_vim'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/tpope/vim-sleuth'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-vinegar'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'https://github.com/altercation/vim-colors-solarized'
+Plug 'https://github.com/ledger/vim-ledger', { 'for': 'ledger' }
+Plug 'https://github.com/elixir-editors/vim-elixir', { 'for': 'elixir' }
 
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'SirVer/ultisnips'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'honza/vim-snippets'
-Plugin 'rust-lang/rust.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ledger/vim-ledger'
-
-call vundle#end()
+call plug#end()
 
 if !(has('win64') || has('win32') || has('win32unix')) || has('gui_running')
     " Windows CLI don't really like the colour scheme, gVim is fine
