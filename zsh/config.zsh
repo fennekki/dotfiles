@@ -18,3 +18,6 @@ setopt HIST_NO_FUNCTIONS
 
 # Don't do the weird stream direction shit
 setopt NO_MULTIOS
+
+# Don't enable `r`!!!
+disable r
