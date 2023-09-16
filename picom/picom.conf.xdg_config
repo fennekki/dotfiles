@@ -1,10 +1,9 @@
 # backend etc
 backend = "glx";
-vsync = "opengl-swc";
+vsync = true;
 
 glx-no-stencil = true;
 glx-no-rebind-pixmap = true;
-glx-swap-method = "undefined";
 
 # transparency/blur
 blur-background = true;
@@ -19,3 +18,7 @@ mark-ovredir-focues = true;
 detect-rounded-corners = true;
 detect-client-opacity = true;
 dbe = false;
+
+blur-background-exclude = [
+	"class_g = 'slop'"
+]

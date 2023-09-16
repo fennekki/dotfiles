@@ -21,7 +21,7 @@ fi
 
 if [ "$1" = "select" -o "$2" = "select" ]
 then
-    maim -d 0.0 -s -o "$FILEPATH"
+    maim -d 0.0 -s | tee "$FILEPATH" | xclip -selection clipboard -t image/png
 else
-    maim "$FILEPATH"
+    maim | tee "$FILEPATH" | xclip -selection clipboard -t image/png
 fi

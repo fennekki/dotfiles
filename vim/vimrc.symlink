@@ -32,6 +32,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/altercation/vim-colors-solarized'
 Plug 'https://github.com/ledger/vim-ledger', { 'for': 'ledger' }
 Plug 'https://github.com/elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'https://github.com/voikko/corevoikko', { 'rtp': 'tools/vim' }
 
 call plug#end()
 

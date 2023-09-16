@@ -4,7 +4,7 @@ URxvt*depth: 24
 URxvt*geometry: 80x32
 
 URxvt*skipScroll: true
-URxvt*font: xft:DejaVu Sans Mono:size=11
+URxvt*font: xft:DejaVu Sans Mono:size=11,xft:Noto Color Emoji
 URxvt*urgentOnBell: true
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: true

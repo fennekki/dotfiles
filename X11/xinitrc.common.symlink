@@ -8,7 +8,7 @@ fi
 xrdb -load $HOME/.Xresources
 
 if [ "$DISABLE_COMPTON" != "true" ]
-    then LANG=C compton &
+    then LANG=C picom &
 fi
 
 if [ "$DISABLE_URXVTD" != "true" ]
