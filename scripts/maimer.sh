@@ -21,7 +21,23 @@ fi
 
 if [ "$1" = "select" -o "$2" = "select" ]
 then
-    maim -d 0.0 -s | tee "$FILEPATH" | xclip -selection clipboard -t image/png
+    (
+        # Freeze screen with maim and feh
+        maim -u | feh -F - &
+        FEH_PID=$!
+        # Write selection to temporary file
+        temp_path="$(mktemp)"
+        maim -l -s -f png "$temp_path"
+        # If the tempfile isn't empty, copy it to screenshots
+        if [ -s "$temp_path" ]
+        then
+            cat "$temp_path" | tee "$FILEPATH" | xclip -selection clipboard -t image/png
+        fi
+        # Remove tempfile
+        rm "$temp_path"
+        # Kill the temporary feh now that we're done
+        kill "$FEH_PID"
+    )
 else
-    maim | tee "$FILEPATH" | xclip -selection clipboard -t image/png
+    maim -u | tee "$FILEPATH" | xclip -selection clipboard -t image/png
 fi
