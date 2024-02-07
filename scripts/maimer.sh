@@ -27,8 +27,8 @@ then
         FEH_PID=$!
         # Write selection to temporary file
         temp_path="$(mktemp)"
-        sleep 0.3
-        maim -s -f png "$temp_path"
+        sleep 0.4
+        maim -u -s -f png "$temp_path"
         # If the tempfile isn't empty, copy it to screenshots
         if [ -s "$temp_path" ]
         then
